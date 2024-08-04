@@ -1,0 +1,53 @@
+.left-plank,
+.right-plank {
+    @apply absolute top-0 bottom-0;
+    transition: all 1s;
+}
+
+.left-plank {
+    @apply left-0 w-1/2 min-h-full;
+
+    &:hover {
+        transform: translateY(180deg)
+    }
+}
+
+.right-plank {
+    @apply right-0 w-1/2 min-h-full;
+}
+
+.days-house {
+    @apply grid grid-cols-5 gap-x-24 gap-y-24 py-12 px-24;
+    background-image: url('../../../public/brick_pattern.jpeg');
+}
+
+.prev-content {
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+}
+
+.day {
+    @apply relative max-w-44 min-w-40 w-fit;
+    border-image: url('../../../public/lights.png') 20;
+
+    &:hover .right-plank {
+        transform: rotateY(-180deg);
+        transform-origin: right 0;
+    }
+
+    &:hover .left-plank {
+        transform: rotateY(180deg);
+        transform-origin: left 0;
+
+    }
+}
+
+/* .window {
+    @apply 
+  } */
+
+.day-number {
+    @apply absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 text-[var(--text-color)] text-8xl;
+    font-family: 'Lletraferida';
+}

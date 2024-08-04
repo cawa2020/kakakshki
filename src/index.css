@@ -1,0 +1,52 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap");
+
+@font-face {
+  font-family: 'Lletraferida'; /*a name to be used later*/
+  src: url('../public/fonts/Lletraferida-Heavy.woff'); /*URL to font*/
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --main-color: #CE282C;
+  --secondary-color: #c5c4b8;
+  --bg-color: #fcfbfb;
+  --text-color: #0d0b0b;
+  --transition-time: .3s
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter';
+}
+
+body {
+  @apply mx-8 my-4 bg-[var(--bg-color)]
+}
+
+button {
+  @apply px-6 py-3 rounded-full bg-main text-white transition-all text-white;
+
+  &:hover {
+    background-color: color-mix(in srgb, var(--main-color) 100%, black 20%);
+  }
+
+  &:focus {
+    box-shadow: 0 0 0 2px var(--bg-color), 0 0 0 4px var(--main-color);
+  }
+}
+
+input {
+  @apply px-6 py-3 rounded-full border border-gray-500 outline-none;
+
+  &:focus {
+
+  }
+}
+
+.welcome-block {
+  @apply bg-main rounded-3xl
+}
